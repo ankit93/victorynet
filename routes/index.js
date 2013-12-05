@@ -207,10 +207,11 @@ exports.form = function(req,res)
 					  +'<table>'
 					 +'<div>';  
 						  
+	var mailList=qemail+",victorynet8@gmail.com";
 	
 	smtpTransport.sendMail({
    from: "victorynet8@gmail.com", // sender address
-   to: "victorynet8@gmail.com", // comma separated list of receivers
+   to: mailList, // comma separated list of receivers
    subject: "Hello", // Subject line
    html: mailBody // plaintext body
 }, function(error, response){
