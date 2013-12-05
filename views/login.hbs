@@ -1,0 +1,164 @@
+
+<html>
+<head>
+<title>Victory net</title>
+<style>
+.main{
+	width:900px; margin:auto;
+}
+#content
+{
+    display: block;   
+    margin: 0 auto;
+    min-height: 400px;
+    width: 920px;	
+}
+#content h1
+{
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	float:left;
+	display: block;
+	width:920px;
+	text-align: center;
+}
+.a 
+a{
+	list-style: none;
+	text-decoration: none;
+	color: #FF8000;
+	
+	
+}
+.heading{
+	background:#000;
+	color:#fff;
+}
+#header2{
+	float:left; width:100%
+	
+	
+}
+.table_set{
+	float:left;
+	 width:25%;
+	
+}
+.heading a{
+	
+	text-decoration: none;
+	list-style: none;
+	color: white;
+}
+.set {
+	 float: left;
+	 width: 100px;
+	
+}
+.even{
+		background-color: #F9F9F9;
+		float: left;
+		width:900px	
+     }
+.odd{
+   	    background: #E6F6F7;
+   	    float: left;
+		width:900px
+     }
+.field_set{
+	float: left;
+	width: 130px;
+	margin-top: 5px;
+	
+}
+.field_width{
+	width: 282px;
+	float: left;
+}
+.float{
+	float:left;
+	
+}
+.BText
+{
+	display: block;
+    float: left;
+    padding: 10px;
+    width: 200px;
+}
+.Binput
+{
+	float:left;
+	display:block;
+	margin-top: 9px;
+}
+.Brow
+{
+	float:left;
+	display:block;
+	font-size:20px;
+}
+.Cdata
+{
+	float:left;
+	display:block;
+	margin-left:250px;
+	margin-top:20px;
+	
+}
+.msg
+{
+	color:red;
+	font-size:18px;
+    margin:0 0 20px 100px;
+}
+.bbb
+{
+	float: left;
+    padding-top: 7px;
+    width: 108px;
+}
+input.SignIn
+{
+	 width: 135px;
+	 height:65px;
+	background: url('../images/signin.png') no-repeat;
+	text-indent: -999px;
+	border:none;
+	margin-left:118px;
+}
+#btnReg
+{
+	float:left;
+	margin-left: 0px;
+}
+</style>
+</head>
+<div id="content">
+<form id="Invoice" name="Invoice" method="post"  action="">
+
+ <h1>Login</h1>
+<div class="Cdata">
+<div class="msg">{{#if msg}} {{msg}} {{/if}}</div>
+    <div class="Brow">
+	<div class="BText"> Email:  </div>
+	<div class="Binput"><input type="text" id="mail" name="mail" required="required" placeholder="Email Address"/></div>	
+	 </div> 
+	  <div class="clear"></div>
+	 
+	  <div class="Brow" >
+	  <div class="BText" >Password:</div>
+	  <div class="Binput"><input type="password" name="pass" required="required" id="pass" placeholder="Password" /></div>
+	   </div>
+	   <div class="clear"></div>
+	   <div class="Button">
+      <div class="BBB">
+   <a href="register.php" id="btnReg"><img src="../images/signup.png" border="0" id="btnReg"/></a>
+   </div>
+   <div class="BBB">
+  <input type="submit" id="btnSubmit" name="btnSubmit" class="SignIn" value="SignIn"/>
+     </div>
+   </div>	    
+
+   </div> 
+   </div>

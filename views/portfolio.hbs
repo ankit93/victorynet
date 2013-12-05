@@ -1,0 +1,40 @@
+<link href="css/kriframework.css" rel="stylesheet" type="text/css" />
+<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+   <script type="text/javascript">
+		$j(document).ready(function(){
+		   $j(".popup").colorbox({width:"700px", height:"330px", iframe:true});	
+		});  
+</script>
+
+<style>
+a {
+  color:#1972AB;
+ }
+
+</style>
+<div class="rghtarea">
+      <div class="contentBoxArea">
+        <h5>Our Portfolio</h5>
+      </div>
+      <div class="breadCrumbs"> <a href="/">Home</a> &gt; Our Portfolio</div>
+      <div class="normalContentArea">
+	  
+	   {{#each users}}
+	  
+  <div class='content_one_third portfolio_item'>
+					<div class='item_data rounded'> 
+					    <a  class="popup"  href='Project-detail?id={{ProjectId}}'>
+					    <img src='uploaded/thumbnail/{{ProjectImage}}' alt='My Projects' style="height:130px;width:280px;padding:1px;"/>
+						</a> 
+                      <div class="ptitle"> <a  href="http://{{ProjectUrl}}" target="_blank" class="style7">{{ProjectTitle}}</a></div>
+                    
+                  
+				  </div>
+				
+				</div>
+		{{/each}}
+	   
+	   
+       
+      </div>
+    </div>

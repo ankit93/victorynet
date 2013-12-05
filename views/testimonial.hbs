@@ -1,0 +1,27 @@
+<div class="rghtarea">
+      <div class="contentBoxArea">
+        <h5> Testimonials</h5>
+      </div>
+      <div class="breadCrumbs"> <a href="/">Home</a> &gt; Testimonials </div>
+      <div class="normalContentArea">
+        <p> We strive to make our customers and their projects successful.&nbsp; As such we
+          have many satisfied clients around the globe that have many nice things to say about
+          us.<br/>
+          <br/>
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+          - - - - - - - - - - -</p>
+        <br/>
+		{{#each users}}
+		   {{{TestimonialDescription}}}
+		  
+    
+        <div style="text-align: right; float: right; clear: both; width: 100%; margin: 10px 0px;">
+          <strong>{{{PersonPosition}}}</strong><br/>
+          <em>-{{{PersonName}}}</em><br />
+          <em>-{{{CreatedDate}}}</em>
+        </div>
+		{{/each}}
+      </div>
+    </div>
+  </div>

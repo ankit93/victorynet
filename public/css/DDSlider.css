@@ -1,0 +1,145 @@
+
+
+
+	/*------------------------
+	---------------- CONTENT
+	------------------------*/
+
+#container {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+	
+	/* You might want to change these options for the main container */
+	#yourSliderId {
+		
+		float: left;
+		height: 360px;
+		width: 980px;
+		border-radius: 5px 5px 5px 5px;    	
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 5px;
+		box-shadow: 0 0 5px #CCCCCC;
+		-moz-box-shadow: 0 0 5px #CCCCCC;
+		-webkit-box-shadow: 0 0 5px #CCCCCC;
+
+		overflow:hidden;
+	}
+	
+	/* images container - This is the most important container - Don't change important properties */
+	#yourSliderId {
+		
+		list-style: none !important;
+		margin: 0 !important;
+		overflow: hidden !important;
+		position: relative !important;
+		
+	}
+
+		/* each slider item - Nothing to change here */
+		#yourSliderId li {
+			
+			display: none;
+			float: left;
+			margin: 0;
+			position: absolute;
+			width: 100%;
+			
+		}
+		
+		/* Don't edit this part */
+		#yourSliderId li.current {
+			
+			display: block;
+			z-index: 2 !important;
+			
+		}
+		
+		/* Don't edit this part */
+		#yourSliderId li.next {
+			
+			display: block;
+			z-index: 1 !important;
+			
+		}
+		
+		/* Don't edit this part - prevents inline lists from being hidden */
+		#yourSliderId li ul li {
+			
+			display: block !important;
+			position: relative !important;			
+
+		}
+
+	#yourSliderId li a img
+	{
+		border:0px none;
+	}
+
+#slider {
+    float: left;
+    height: 40px;
+    position: relative;
+    width: 100%;
+}
+.slider_arrow_left {
+    bottom: 10px;
+    cursor: pointer !important;
+    float: left;
+    height: 22px;
+    left: 10px;
+    position: absolute;
+    width: 22px;
+    z-index: 50 !important;
+}
+.slider_arrow_left {
+    background: url("../images/left_arrow.png") no-repeat scroll left top transparent;
+}
+.slider_arrow_right {
+    bottom: 10px;
+    cursor: pointer;
+    float: left;
+    height: 22px;
+    left: 37px;
+    position: absolute;
+    width: 22px;
+    z-index: 50;
+}
+.slider_arrow_right {
+    background: url("../images/right_arrow.png") no-repeat scroll left top transparent;
+}
+.slider_selector, .slider_selector_dis {
+    background-color: #333333;
+    bottom: 10px;
+    list-style: none outside none;
+    margin: 0 0 0 5px;
+    opacity: 0.5;
+    padding: 3px 2px;
+    position: absolute;
+    right: 10px;
+    z-index: 50;
+	border-radius: 5px 5px 5px 5px;    	
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 5px;
+		box-shadow: 0 0 5px #CCCCCC;
+		-moz-box-shadow: 0 0 5px #CCCCCC;
+		-webkit-box-shadow: 0 0 5px #CCCCCC;
+}
+.slider_selector li, .slider_selector_dis li {
+    background: url("../images/slider_selector.png") no-repeat scroll left top transparent;
+    cursor: pointer;
+    display: block !important;
+    float: left;
+    height: 10px !important;
+    margin: 0 3px !important;
+    position: relative !important;
+    width: 10px !important;
+}
+.slider_selector li.current, .slider_selector_dis li.current {
+    background: url("../images/slider_selector_current.png") no-repeat scroll left top transparent;
+}
+.slider_selector_dis li {
+    cursor: default !important;
+    z-index: 50;
+}

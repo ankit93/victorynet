@@ -1,0 +1,79 @@
+<div id="content">
+  <div id="leftBox">
+    <div id="pageIntro">
+      <h2> Welcome to VictoryNet Technology </h2>
+      <p></p>
+    </div>
+    <div class="contentBox">
+      <div class="contentBoxTop">
+        <h3> <span id="lblTitle">Manage Testimonial </span> </h3>
+      </div>
+      <div class="innerContent">
+	      
+      <div style="margin-top:10px;"></div>
+	  
+	  
+ <script type="text/javascript">
+
+$(document).ready(function()
+{	
+       $("#setting").addClass("active");
+        oTable = $('#grdData').dataTable({
+
+                                        "bJQueryUI": true,
+
+                                        "sPaginationType": "full_numbers",
+
+                                        "bProcessing": true,
+
+                                        "bServerSide": true,
+
+                    "sAjaxSource":"http://localhost:3000/cms/reachGrid"				
+
+                                });	
+
+});
+</script>
+	  
+<table cellpadding="0" cellspacing="0" border="0" class="serviceContainer" id="grdData" style="width:100%;">
+
+            <thead>
+
+              <tr style="" id="toptablea">
+
+                <th style="width:10px;">S.No</th>
+
+                <th style="width:30px;" align="left">Contact Name</th>
+                 <th style="width:30px;" align="left">Contact Email</th>		
+				 <th style="width:30px;" align="left">Contact Telephone</th>	
+				 <th style="width:30px;" align="left">Contact Country</th>		
+				 <th style="width:30px;" align="left">Contact Subject</th>		
+				 <th style="width:30px;" align="left">Contact Message</th>		
+				 <th style="width:30px;" align="left">Create dDate</th>										
+
+				<th style="width:10px;">Admin</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>		 
+
+                <td colspan="6" class="dataTables_empty">Loading data from server</td>                        
+
+             
+
+              </tr>
+
+            </tbody>
+
+          </table> 
+	  
+	
+
+   </div>
+  </div>
+ </div>
+</div>

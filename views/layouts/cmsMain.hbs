@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>.:: VictoryNet Technology ::. - CMS</title>
+	    
+    <link href="css/style.css" rel="stylesheet" type="text/css" />  
+    <script src="js/jquery.min.js"></script>
+    
+     <script src="js/jquery.dataTables.min.js" type="text/javascript"></script> 
+ <link rel="stylesheet" href="css/demo_table_jui.css" type="text/css" /> 
+    <script type="text/javascript" charset="utf-8"> 
+	//tabbed forms box
+		$(function () {
+			var tabContainers = $('div#forms > div.innerContent'); // change div#forms to your new div id (example:div#pages) if you want to use tabs on another page or div.
+			tabContainers.hide().filter(':first').show();
+			$('ul.switcherTabs a').click(function () {
+				tabContainers.hide();
+				tabContainers.filter(this.hash).show();
+				$('ul.switcherTabs li').removeClass('selected');
+				$(this).parent().addClass('selected');
+				return false;
+			}).filter(':first').click();
+		});
+    </script> 
+    <style type="text/css"> 
+        .subLinks
+        {
+        	font-family:"Lucida Sans Unicode","Trebuchet Ms",Helvetica,Arial;
+        	color:#999999;
+            font-size:0.9em;
+        } 
+		       
+        .subLinks span li
+        {
+            list-style:none;
+        }  
+            
+        .subLinks span li a 
+		{
+            background:transparent none repeat scroll 0 0;
+            color:#999999;
+            font-size:0.8em;
+            padding:10px 5px;
+            font-size:0.9em;
+            float:left;
+            text-decoration:underline;
+        }
+        
+        .subLinks span li a:hover
+		 {
+            color:#777777;            
+        }
+        
+        .subLinks span li.selected a 
+		{
+            color:#AB8617;
+            background:transparent none repeat scroll 0 0;
+        }
+        
+    </style>
+	 
+</head>
+<body>
+<div id="container"> 
+        <div id="header"> 
+            <div id="logo"> 
+                <h1> 
+                    <span><a href="">VictoryNet Technology</a></span></h1> 
+                <p> 
+                    Customized CMS</p> 
+            </div> 
+            <div id="userBox"> 
+                <p>            
+                        <img src="images/icon_user.gif" width="16" height="19" alt=" " /> 
+                        Hello,<span id="ctl00_lblName">admin</span> 
+                        | <a href="javascript:GenericButtonClickLoadWineBox();">Settings</a> 
+                        | <a id="LinkButton2" href="/logout">Logout</a>
+                 </p> 
+                <p class="small"> 
+                    <span id="lbldate" class="white"><?php echo date('m-d-Y') ?></span></p> 
+            </div> 
+            <!-- end of #userBox --> 
+            <div id="menu"> 
+                <ul> 
+                    <span id="lblContent">
+						<li><a href='our-portfolio' target='_self'> Our Portfolio</a></li> 
+						<li><a href='quote' target='_self'>Quote</a></li> 
+						<li><a href='testimonial' target='_self'>Testimonials</a></li>                        
+                        <li ><a href='reach-us' target='_self'>Reach Us</a></li>                                     			    </span>                    
+                </ul> 
+                <p id="rightLink"> 
+                    <a href="/">View Site</a></p> 
+                <br class="clearFix" /> 
+                <div class="subLinks"> 
+                    <span id="lblContent">
+						<li class='selected'><a href='' target='_self'></a></li>						
+					</span> 
+                </div> 
+            </div> 
+            <!-- end of #menu --> 
+        </div> 
+        <!-- end of  #header --> 
+        <hr /> 
+		
+		{{{body}}}
+		</div>
+		<hr /> 
+    <div id="footerWrap"> 
+        <div id="footer"> 
+            <ul> 
+                <span id="lblBottomContents">
+						<li><a href='our-portfolio' target='_self'> Our Portfolio</a></li> 
+						<li><a href='why-outsource-to-us' target='_self'>Why OutSource to Us</a></li> 
+						<li><a href='Quote' target='_self'>Quote</a></li> 
+						<li><a href='testimonial' target='_self'>Testimonials</a></li>                        
+                        <li ><a href='reach-us' target='_self'>Reach Us</a></li>
+				</span>                
+            </ul> 
+            <div id="footRight"> 
+                <div id="footStats"> 
+                    
+                </div> 
+                Copyright &copy; 2010<br /> 
+                
+                
+            </div> 
+        </div> 
+        <br class="clearFix" /> 
+    </div> 
+    
+    <table id="divAdminManage" border="0" cellpadding="0" cellspacing="0" style="display: none;" width="528px"> 
+            <tr style="height: 10px; background-image: url(images/top_manageusers.png);"> 
+                <td> 
+                </td> 
+            </tr> 
+            <tr > 
+                <td align="right"style="background-image: url(images/bg_manageusers.png);"> 
+                    <img src="images/btnCloseMU.png" onclick="MBox_Close();" style="cursor: pointer;" />&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+            </tr> 
+            <tr style="min-height: 628px; background-image: url(images/bg_manageusers.png);"> 
+                <td width="528px"> 
+	                <div width="100%" align="center" style="padding-left:30px; padding-right:30px; padding-bottom:30px"> 
+			            <div id="updatepanel"> 
+					        <h4> 
+					            CMS User Management
+					        </h4> 
+					        <hr /> 
+						</div> 
+	        			<span id="lblTip"></span> 
+ 					</dir>
+                </td> 
+            </tr> 
+            <tr style="height: 10px; background-image: url(images/bottom_manageusers.png);"> 
+                <td> 
+                </td> 
+            </tr> 
+        </table> 
+ 
+        <div id="LightBox1" style="display: none; position: absolute; top: 0px; left: 0px;z-index: 100000; width: 100%; height: 100%; background-color: #000000; filter: alpha(opacity=75);-moz-opacity: 0.8; opacity: 0.75;"> 
+        </div> 
+        <div id="Slideshow" style="display: none; background-color: white; border: solid 2px #203050;padding: 2px;"> 
+        </div> 
+        
+</body> 
+</html> 

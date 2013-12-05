@@ -1,0 +1,136 @@
+
+
+</script>
+		</script>
+    <!-- TinyMCE -->
+	<script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>
+	<script type="text/javascript">
+		tinyMCE.init({
+			// General options
+			mode : "textareas",
+			theme : "advanced",
+			elements : "cms_description",
+			plugins : "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+	
+			// Theme options
+			theme_advanced_buttons1 : "cut,copy,paste,pastetext,pasteword,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect",
+			theme_advanced_buttons2 : "bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,cleanup,code,|,preview,|,forecolor,backcolor,|,hr,|,sub,sup,|,media,visualchars,nonbreaking",
+			theme_advanced_buttons3 : "tablecontrols",
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "bottom",
+			theme_advanced_resizing : true,
+	
+			// Example content CSS (should be your site CSS)
+			
+	
+			// Drop lists for link/image/media/template dialogs
+			template_external_list_url : "lists/template_list.js",
+			external_link_list_url : "lists/link_list.js",
+			external_image_list_url : "lists/image_list.js",
+			media_external_list_url : "lists/media_list.js",
+	
+			// Replace values for the template plugin
+			template_replace_values : {
+				username : "Some User",
+				staffid : "991234"
+			}
+		});
+	</script>
+	<!-- /TinyMCE -->
+
+
+<div id="content">
+  <div id="leftBox">
+    <div id="pageIntro">
+      <h2> Welcome to VictoryNet Technology </h2>
+      <p></p>
+    </div>
+    <div class="contentBox">
+      <div class="contentBoxTop">
+        <h3> <span id="lblTitle">Edit Testimonial Information</span> </h3>
+      </div>
+      <div style="float:right;">
+      <a href="/cms/testimonial"><img src="./images/backButton.gif" height="75" width="95" style="border:0px none;"/> </a> 
+	  </div> 
+      <div class="innerContent">  
+      <div style="margin-top:30px;"></div>  
+	  {{#each users}}     
+	          <form  id="frmgroup" action="edit-testimonial?id={{TestimonialId}}" method="post" >	         
+          <table cellpadding="0" cellspacing="0" border="0" class="serviceContainer" id="grdData" style="width:75%;">
+            <thead>
+           <tr style="width:564px;padding:3px;font-weight:bold;height: 28px;">
+              <tr>
+			  <td> Testimonial Description</td>
+			  <td><textarea cols="40" rows="10" id="txtDescriptiosn" name="txtDescription" required="required">
+	{{TestimonialDescription}}
+			  </textarea></td>
+			  </tr>
+			  <tr>
+			  <td>Person Position </td>
+			  <td><input type="text" id="txtPosition" name="txtPosition" required="required"  value="{{PersonPosition}}"/></td>
+			  </tr>
+			  <tr>
+			  <td>Person Name</td>
+			  <td><input type="text" id="txtName" name="txtName" required="required" value = "{{PersonName}}"/></td>
+			  </tr>
+			  <tr>
+			  <td>Created Date</td>
+			  <td><input type="text" id="txtDate" name="txtDate"  id="datepicker" required="required" value="{{CreatedDate}}"/></td>
+			  </tr>
+			    <tr>
+              <td></td>
+              <td>   <input type="submit" id="submit" name="submit" value="Update"/>       
+			          <input type="submit" id="btnCancel" name="btnCancel" value="Cancel" /></td>      	  </tr>
+            
+          </table>
+        </form>
+        {{else}}
+        <form  id="frmgroup" action="" method="post" >	         
+          <table cellpadding="0" cellspacing="0" border="0" class="serviceContainer" id="grdData" style="width:75%;">
+            <thead>
+           <tr style="width:564px;padding:3px;font-weight:bold;height: 28px;">
+              <tr>
+			  <td> Testimonial Description</td>
+			  <td><textarea cols="40" rows="10" id="txtDescriptiosn" name="txtDescription" required="required">
+	
+			  </textarea></td>
+			  </tr>
+			  <tr>
+			  <td>Person Position </td>
+			  <td><input type="text" id="txtPosition" name="txtPosition" required="required"  /></td>
+			  </tr>
+			  <tr>
+			  <td>Person Name</td>
+			  <td><input type="text" id="txtName" name="txtName" required="required" /></td>
+			  </tr>
+			  <tr>
+			  <td>Created Date</td>
+			  <td><input type="text" id="txtDate" name="txtDate"  id="datepicker" required="required" /></td>
+			  </tr>
+			    <tr>
+              <td></td>
+              <td>   <input type="submit" id="submit" name="submit" value="Update"/>       
+			          <input type="submit" id="btnCancel" name="btnCancel" value="Cancel" /></td>      	  </tr>
+            
+          </table>
+        </form>
+          
+        
+        
+        
+       {{/each}}
+        <div style='display:none'>
+          <div id='msgBox' style='padding:10px; background:#fff;'> <span style="display:block;text-align:center;">
+           
+            </span> 
+			</div>
+        </div>
+        <br />
+      </div>
+     
+    </div>
+    <hr />
+  </div>
+  
+ </div>
