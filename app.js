@@ -14,6 +14,7 @@ var app = Express();
 
 
 // all environments
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.engine('hbs', Exphbs({
 	defaultLayout: 'main',
