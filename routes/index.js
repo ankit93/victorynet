@@ -260,7 +260,7 @@ exports.reachContact = function(req,res)
 	var txtRMessage=req.body.txtRMessage;
 	var createDate = new Date();
 	
-	var newPost = fs.readFileSync('views/TempEmail/new.html');
+	var newPost = fs.readFileSync('views/TempEmail/new.html','utf8');
 	var admin = fs.readFileSync('views/TempEmail/adminReach.html','utf8');
 	
 	admin=admin.replace("txtRName",txtRName);
