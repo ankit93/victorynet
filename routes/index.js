@@ -4,7 +4,7 @@
  */
  var db = require('../config');
  // var file = require('../req.files');
- 
+ var fs = require('fs');
  var express = require("express");
 var app = express();
 var url = require('url');
@@ -26,6 +26,8 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
         pass: "victory93"
     }
 });
+
+
 
 
 
@@ -189,31 +191,36 @@ exports.form = function(req,res)
 	var qdescription=req.body.txaDescription;
 	var qcreatedDate=new Date();
 	
+  
+	var newPost = fs.readFileSync('views/TempEmail/new.html');
 	
-	var mailBody ='<div style="width:600px;">'
-	                 +'<table>'
-	                    +'<tr>'
-						  +'<td>Name</td><td>'+qname+'</td>'
-						+'</tr>'
-						+'<tr>'
-						  +'<td>Email</td><td>'+qemail+'</td>'
-						+'</tr>'
-						+'<tr>'
-						  +'<td>Company</td><td>'+qcompany+'</td>'
-						+'</tr>'
-						+'<tr>'
-						  +'<td>describe your project </td><td>'+qdescription+'</td>'
-						+'</tr>'
-					  +'<table>'
-					 +'<div>';  
-						  
-	var mailList=qemail+",victorynet8@gmail.com";
-	
+	var admin = fs.readFileSync('views/TempEmail/adminQuote.html','utf8');
+	admin=admin.replace("qname",qname);
+	admin=admin.replace("qemail",qemail);
+	admin=admin.replace("qcompany",qcompany);  
+	admin=admin.replace("qdescription",qdescription);    
+  
+						  	
+	//client
 	smtpTransport.sendMail({
    from: "victorynet8@gmail.com", // sender address
-   to: mailList, // comma separated list of receivers
+   to: qemail , // comma separated list of receivers
    subject: "Hello", // Subject line
-   html: mailBody // plaintext body
+   html: newPost // plaintext body
+}, function(error, response){
+   if(error){
+       console.log(error);
+   }else{
+       console.log("Message sent: " + response.message);
+   }
+});
+	
+	//admin 
+	smtpTransport.sendMail({
+   from: "victorynet8@gmail.com", // sender address
+   to:  'victorynet8@gmail.com', // comma separated list of receivers
+   subject: "Hello", // Subject line
+   html: admin // plaintext body
 }, function(error, response){
    if(error){
        console.log(error);
@@ -245,7 +252,7 @@ exports.reachContact = function(req,res)
 	var query= url.parse(req.url, true).query;
     var query = query.pageName;
 	
-	var qname =req.body.txtRName;
+	var txtRName =req.body.txtRName;
 	var txtREmail =req.body.txtREmail;
 	var txtRPhone=req.body.txtRPhone;
 	var cmbRCountry=req.body.cmbRCountry;
@@ -253,7 +260,45 @@ exports.reachContact = function(req,res)
 	var txtRMessage=req.body.txtRMessage;
 	var createDate = new Date();
 	
- client.query('INSERT INTO contactinfo(ContactName,ContactEmail,ContactTelephone,ContactCountry,ContactSubject,ContactMessage,CreatedDate) VALUES (?,?,?,?,?,?,?) ',[qname,txtREmail,txtRPhone,cmbRCountry,txtRSubject,txtRMessage,createDate],
+	var newPost = fs.readFileSync('views/TempEmail/new.html');
+	var admin = fs.readFileSync('views/TempEmail/adminReach.html','utf8');
+	
+	admin=admin.replace("txtRName",txtRName);
+	admin=admin.replace("txtREmail",txtREmail);
+	admin=admin.replace("txtRPhone",txtRPhone);  
+	admin=admin.replace("cmbRCountry",cmbRCountry);  
+	admin=admin.replace("txtRSubject",txtRSubject);
+	admin=admin.replace("txtRMessage",txtRMessage);
+ 
+	
+	smtpTransport.sendMail({
+   from: "victorynet8@gmail.com", // sender address
+   to: txtREmail , // comma separated list of receivers
+   subject: "Hello", // Subject line
+   html: newPost // plaintext body
+}, function(error, response){
+   if(error){
+       console.log(error);
+   }else{
+       console.log("Message sent: " + response.message);
+   }
+});
+	
+	//admin 
+	smtpTransport.sendMail({
+   from: "victorynet8@gmail.com", // sender address
+   to:  'victorynet8@gmail.com', // comma separated list of receivers
+   subject: "Hello", // Subject line
+   html: admin // plaintext body
+}, function(error, response){
+   if(error){
+       console.log(error);
+   }else{
+       console.log("Message sent: " + response.message);
+   }
+});
+	
+ client.query('INSERT INTO contactinfo(ContactName,ContactEmail,ContactTelephone,ContactCountry,ContactSubject,ContactMessage,CreatedDate) VALUES (?,?,?,?,?,?,?) ',[txtRName,txtREmail,txtRPhone,cmbRCountry,txtRSubject,txtRMessage,createDate],
 		  function(err, data)
 			{
 			  if (err) {
