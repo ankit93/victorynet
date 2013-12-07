@@ -192,7 +192,7 @@ exports.form = function(req,res)
 	var qcreatedDate=new Date();
 	
   
-	var newPost = fs.readFileSync('views/TempEmail/new.html','utf8');
+//	var newPost = fs.readFileSync('views/TempEmail/new.html','utf8');
 	
 	var admin = fs.readFileSync('views/TempEmail/adminQuote.html','utf8');
 	admin=admin.replace("qname",qname);
