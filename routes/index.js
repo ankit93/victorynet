@@ -192,9 +192,9 @@ exports.form = function(req,res)
 	var qcreatedDate=new Date();
 	
   
-    var newPost = fs.readFileSync('views/TempEmail/new.html','utf8');
+    var newPost = fs.readFileSync('views/tempEmail/new.html','utf8');
 	
-	var admin = fs.readFileSync('views/TempEmail/adminQuote.html','utf8');
+	var admin = fs.readFileSync('views/tempEmail/adminQuote.html','utf8');
 	admin=admin.replace("qname",qname);
 	admin=admin.replace("qemail",qemail);
 	admin=admin.replace("qcompany",qcompany);  
@@ -260,8 +260,8 @@ exports.reachContact = function(req,res)
 	var txtRMessage=req.body.txtRMessage;
 	var createDate = new Date();
 	
-	var newPost = fs.readFileSync('views/TempEmail/new.html','utf8');
-	var admin = fs.readFileSync('views/TempEmail/adminReach.html','utf8');
+	var newPost = fs.readFileSync('views/tempEmail/new.html','utf8');
+	var admin = fs.readFileSync('views/tempEmail/adminReach.html','utf8');
 	
 	admin=admin.replace("txtRName",txtRName);
 	admin=admin.replace("txtREmail",txtREmail);
